@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--Header👇-->
+    <header>
+        <!--Logo👇-->
+        <div class="logo">
+            <h1>My Portfolio</h1>
+        </div>
+        <!--Hamburger btn🍔-->
+        <div class="menu-btn">
+            ☰
+        </div>
+        <!--Navigation Bar👇-->
+        <div class="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">My Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+    </header>
+    <!--hero section👇-->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>I'm <span>Jeet Soni</span></h1>
+            <h3>Web Developer • Designer • BCA Student</h3>
+            <p>I build modern, responsive and clean web experiences that help businesses grow and stand out online.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="primary">Hire Me</button>
+                <button class="secondary">My Work</button>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!--Services👇-->
+        <section id="services">
+            <h2>Services</h2>
+            <div class="services-container">
+                <div class="card">
+                    <h3>🌐Web Development</h3>
+                    <p>I Build Cool & Responsive sites</p>
+                </div>
+
+                <div class="card">
+                    <h3>📲App Development</h3>
+                    <p>Build Your Own Software quickly.</p>
+                </div>
+
+                <div class="card">
+                    <h3>💌SEO Optimization</h3>
+                    <p>Stand out with modern strategies and trends</p>
+                </div>
+            </div>
+        </section>
+        <!--Projects👇-->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-container">
+                <div class="project">
+                    <h3>Simple To-Do Application</h3>
+                    <p>here you can write your daily task with date & time. Simple & Clean UI</p>
+                </div>
+
+                <div class="project">
+                    <h3>Weather website</h3>
+                    <p>In this website you can check real time Weather</p>
+                </div>
+
+                <div class="project">
+                    <h3>Calculator App</h3>
+                    <p>This is simple calculator app i made using HTML, CSS, Javascript</p>
+                </div>
+            </div>
+        </section>
+
+        <!--Skills-->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">HTML</div>
+                <div class="skill-card">CSS</div>
+                <div class="skill-card">Javascript</div>
+                <div class="skill-card">Responsive Design</div>
+                <div class="skill-card">UI/UX</div>
+                <div class="skill-card">GitHub</div>
+            </div>
+        </section>
+
+        <!--About👇-->
+        <section id="about">
+            <h2>About</h2>
+            <div class="acl">
+                <p>I’m a Web Developer and BCA student who focuses on clean design, strong UI and real-world usability.
+                    I like building things that actually help people and businesses.</p>
+
+                <p>Currently improving skills in JavaScript, UI/UX thinking and building reliable responsive websites.
+                </p>
+            </div>
+        </section>
+        <!--Real CTA-->
+        <section id="cta" onclick="location.href='#contact'">
+            <h2>Ready to build something Amazing?</h2>
+            <p>Whether you need a website, UI design or help with your digital presence — I’m ready to help.</p>
+
+            <button class="cta-btn">Contact Me</button>
+
+        </section>
+        <!--Contact Me👇-->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="acl">
+                <!--Form👇-->
+                <form class="call">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="user_name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="User_email">
+
+                    <label for="phone">Number:</label>
+                    <input type="number" id="phone" name="user_phone" required>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+        <!--Location👇-->
+        <section id="location">
+            <h2>Location</h2>
+            <div class="acl">
+                <p>Rajkot,India</p>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #0f1023;"> &nabla; Made by Jeet</footer>
+
+    <!--Javascript Below👇-->
+    <script>
+        const sections = document.querySelectorAll("section");
+
+        // Reveal animation
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            })
+        }, { threshold: 0.2 });
+
+        sections.forEach(sec => observer.observe(sec));
+
+        // Highlight nav while scrolling on which section user is
+
+        const navLinks = document.querySelectorAll(".nav a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+
+            sections.forEach(sec => {
+                const top = window.scrollY;
+                const offset = sec.offsetTop - 200;
+                const height = sec.offsetHeight;
+                if (top >= offset && top < offset + height) {
+                    current = sec.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(a => {
+                a.classList.remove("active");
+                if (a.getAttribute("href").includes(current)) {
+                    a.classList.add("active");
+                }
+            });
+        });
+
+
+        // menu toggle
+        const menuBtn = document.querySelector(".menu-btn");
+        const navList = document.querySelector(".nav ul");
+
+        menuBtn.addEventListener("click", () => {
+            navList.classList.toggle("show");
+        });
+
+        // AUTO CLOSE — put it here
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                navList.classList.remove("show");
+            });
+        });
+
+    </script>
+</body>
+
+</html>

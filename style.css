@@ -1,0 +1,408 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --brand: #38bdf8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #121212;
+  color: #fff;
+}
+
+p {
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  padding: 1.25rem 3.75rem;
+  background: #020617;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+}
+
+header.scrolled{
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.menu-btn {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.logo h1 {
+  font-size: 1.75rem;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1.5625rem;
+  list-style: none;
+}
+
+.nav a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 1.125rem;
+  transition: 0.25s ease;
+}
+
+.nav a:hover {
+  transform: scale(1.05);
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 0;
+  background: var(--brand);
+  transition: 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.nav a.active {
+  color: var(--brand);
+}
+
+.hero {
+  text-align: center;
+  padding: 7rem 3rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero h3 {
+  margin-top: 10px;
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.hero p {
+  margin-top: 15px;
+  max-width: 650px;
+  margin-inline: auto;
+}
+
+.hero-buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  transition: 0.25s ease;
+}
+
+.hero-buttons button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.hero-buttons .primary {
+  padding: 20px 25px;
+  border: none;
+  background: var(--brand);
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-buttons .primary:hover {
+  background: #67d3ff;
+  transform: translateY(-3px);
+}
+
+.hero-buttons .secondary {
+  padding: 10px 25px;
+  border: 2px solid var(--brand);
+  background: transparent;
+  color: var(--brand);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-buttons .secondary:hover {
+  background: var(--brand);
+  color: #000;
+}
+
+section {
+  padding: 3.75rem 5rem;
+  font-size: 1.25rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s ease;
+}
+
+section h2 {
+  margin-bottom: 0.625rem;
+  color: var(--brand);
+  letter-spacing: 1px;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero{ background:#0b1220; }
+#services{ background:#111827; }
+#projects{ background:#0b1220; }
+#skills{ background:#111827; }
+#about{ background:#0b1220; }
+#cta{ background:#111827; }
+#contact{ background:#0b1220; }
+#location{ background:#111827; }
+
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.card {
+  background: #1f2937;
+  padding: 30px;
+  border-radius: 18px;
+  width: 280px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  background: var(--brand);
+  color: #000;
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.project {
+  background: #1f2937;
+  padding: 30px;
+  border-radius: 18px;
+  width: 280px;
+  text-align: center;
+  transition: 0.3s;
+  margin: 10px;
+}
+
+.project:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  background: var(--brand);
+  color: #000;
+}
+
+#skills{
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.skill-card{
+  background: #1f2937;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: 1px solid #38bdf8;
+  transition: .3s ease; 
+}
+
+.skill-card:hover{
+  background: #38bdf8;
+  color: #000;
+  transform: translateY(-5px);
+}
+
+.acl {
+  background:#1f2937;
+  padding:20px;
+  border-radius:15px;
+  max-width:800px;
+  margin:20px auto;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+#cta{
+  text-align: center;
+  padding: 90px 20px;
+  background: #0b1220;
+}
+
+#cta p{
+  margin-top: 10px;
+  color: #9ca3af;
+}
+
+.cta-btn{
+  margin-top: 20px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  background: #38bdf8;
+  color: #000;
+  font-size: 18px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.cta-btn:hover{
+  background: #67d3ff;
+  transform: translateY(-3px);
+}
+
+.call {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.call label {
+  text-align: left;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.call input {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.call button {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  background: var(--brand);
+  color: #000;
+  cursor: pointer;
+}
+
+.call button:hover {
+  background: #67d3ff;
+}
+
+footer {
+  text-align: center;
+  padding: 1.25rem;
+  background: #020617;
+}
+/* Tablet */
+@media (max-width: 992px) {
+  section {
+    padding: 3rem 2rem;
+  }
+
+  .services-container {
+    gap: 20px;
+  }
+
+  .card {
+    width: 260px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu-btn{
+    display: block;
+  }
+
+  .nav ul {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #0b1220;
+    padding: 20px;
+    border-radius: 20px;
+    width: 200px;
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .nav ul.show{
+    display: flex;
+  }
+
+  .hero {
+    padding: 4rem 2rem;
+  }
+
+  .hero h3 {
+    font-size: 1.1rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .services-container {
+    justify-content: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  section {
+    padding: 2.5rem 1.5rem;
+  }
+}
