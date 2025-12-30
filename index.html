@@ -19,6 +19,8 @@
 <body>
     <!--Header👇-->
     <header>
+        <!--theme toggle-->
+        <button id="themeBtn">🌙</button>
         <!--Logo👇-->
         <div class="logo">
             <h1>My Portfolio</h1>
@@ -80,33 +82,34 @@
             <h2>Projects</h2>
             <div class="project-container">
 
-                    <div class="project">
-                        <h3>To-Do App</h3>
-                        <p>Simple task management app with clean UI.</p>
-                        <div class="btns">
-                            <a href="your live app link" target="_blank">Live Demo</a>
-                            <a href="Your GITHUB Link" target="_blank">Code</a>
-                        </div>
+                <div class="project">
+                    <h3>Glassmorphism Login UI</h3>
+                    <h4>Built with: HTML, CSS, JavaScript</h4>
+                    <p>A simple and clean UI with glass effect.</p>
+                    <div class="btns">
+                        <a href="https://itzjeetoffical.github.io/video-01-login-page/" target="_blank">Live</a>
+                        <a href="https://github.com/itzjeetoffical/video-01-login-page" target="_blank">Code</a>
                     </div>
+                </div>
 
-                    <div class="project">
-                        <h3>Weather App</h3>
-                        <p>Weather checking app with API Integration.</p>
-                        <div class="btns">
-                            <a href="#" target="_blank">Live Demo</a>
-                            <a href="#" target="_blank">Code</a>
-                        </div>
+                <div class="project">
+                    <h3>Social Media Buttons</h3>
+                    <h4>Built with: HTML, CSS, JavaScript</h4>
+                    <p>A mordern and premium looking social media buttons</p>
+                    <div class="btns">
+                        <a href="https://itzjeetoffical.github.io/social-media-btns/" target="_blank">Live </a>
+                        <a href="https://github.com/itzjeetoffical/social-media-btns" target="_blank">Code</a>
                     </div>
+                </div>
 
-                    <div class="project">
-                        <h3>Calculator</h3>
-                        <p>Clean functional calculator app.</p>
-                        <div class="btns">
-                            <a href="#" target="_blank">Live Demo</a>
-                            <a href="#" target="_blank">Code</a>
-                        </div>
+                <div class="project">
+                    <h3>Blog Preview Card</h3>
+                    <h4>Built with: HTML, CSS, JavaScript</h4>
+                    <p>A funky blog card desgin.</p>
+                    <div class="btns">
+                        <a href="https://itzjeetoffical.github.io/blog-preview-card/" target="_blank">Live Demo</a>
+                        <a href="https://github.com/itzjeetoffical/blog-preview-card" target="_blank">Code</a>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -141,7 +144,7 @@
             <p>Whether you need a website, UI design or help with your digital presence — I’m ready to help.</p>
 
             <button class="cta-btn" onclick="location.href='#contact'">Contact Me</button>
-            <button class="pdf" onclick="location.href='Jeet_Soni_Resume (1).pdf'">
+            <button class="pdf" onclick="location.href='Jeet_Soni_Resume.pdf'">
                 Download Resume
             </button>
 
@@ -151,7 +154,8 @@
             <h2>Contact</h2>
             <div class="acl">
                 <!--Form👇-->
-                <form class="call" action="https://formspree.io/f/xnjqryeo" method="POST">
+                <form class="call" action="https://formspree.io/f/xnjqryeo" method="POST" target="_blank">
+
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="user_name" required>
 
@@ -173,18 +177,26 @@
             </div>
         </section>
     </main>
+    <!--Social Media Link-->
+    <section id="social">
+        <h2>Connect With Me</h2>
 
-    <footer style="background: #0f1023;"> <p> Made by Jeet</p>
-        <section id="social">
-            <h2>Connect With Me</h2>
+        <div class="social-links">
+            <a href="https://github.com/itzjeetoffical" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/itzjeetoffical" target="_blank">LinkedIn</a>
+            <a href="mailto:jeetsoni273@gmail.com">Email</a>
+            <a href="https://wa.me/919408388966" target="_blank">WhatsApp</a>
+        </div>
+    </section>
 
-            <div class="social-links">
-                <a href="https://github.com/itzjeetoffical" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/itzjeetoffical" target="_blank">LinkedIn</a>
-                <a href="mailto:jeetsoni273@gmail.com">Email</a>
-                <a href="https://wa.me/919408388966" target="_blank">WhatsApp</a>
-            </div>
-        </section>
+    <!--Pop up message-->
+    <div id="successBox">
+        <p>Thank you! Your message has been submitted.</p>
+    </div>
+
+    <footer style="background: #0f1023;">
+        <p> Made by Jeet</p>
+
 
     </footer>
 
@@ -241,6 +253,34 @@
             link.addEventListener("click", () => {
                 navList.classList.remove("show");
             });
+        });
+
+
+        // pop up msg js //
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", () => {
+            setTimeout(() => {
+                document.getElementById("successBox").style.display = "block";
+            }, 500);
+
+            setTimeout(() => {
+                document.getElementById("successBox").style.display = "none";
+            }, 5000);
+        });
+
+
+        // toggle theme dark/light //
+        const themeBtn = document.getElementById("themeBtn");
+
+        themeBtn.addEventListener("click", () => {
+            document.body.classList.toggle("light");
+
+            if (document.body.classList.contains("light")) {
+                themeBtn.textContent = "☀️";
+            } else {
+                themeBtn.textContent = "🌙";
+            }
         });
 
     </script>
