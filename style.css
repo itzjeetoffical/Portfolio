@@ -225,6 +225,12 @@ section.show {
   color: #000;
 }
 
+.project:hover h3,
+.project:hover p{
+  color:black;
+}
+
+
 .btns{
   display: flex;
   gap: 10px;
