@@ -31,9 +31,30 @@ header {
   backdrop-filter: blur(6px);
 }
 
-header.scrolled{
-  background: rgba(0, 0, 0, 0.6);
+#themeBtn{
+  background:none;
+  border:1px solid #38bdf8;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+  color:#38bdf8;
 }
+
+.light{
+  background:white;
+  color:black;
+}
+
+.light header{
+  background:white;
+}
+
+.light .project,
+.light .services .card{
+  background:#e5e7eb;
+  color:black;
+}
+
 
 .menu-btn {
   display: none;
@@ -128,7 +149,7 @@ header.scrolled{
 
 .hero-buttons .primary:hover {
   background: #67d3ff;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .hero-buttons .secondary {
@@ -314,7 +335,7 @@ section.show {
 
 .cta-btn:hover{
   background: #67d3ff;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .pdf {
@@ -331,7 +352,7 @@ section.show {
 
 .pdf:hover {
   background: #67d3ff;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .call {
@@ -400,6 +421,18 @@ footer {
 .social-links a:hover{
   background:#38bdf8;
   color:black;
+}
+
+#successBox{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background:#38bdf8;
+  color:black;
+  padding:12px 18px;
+  border-radius:8px;
+  display:none;
+  box-shadow:0 0 10px rgba(0,0,0,.4);
 }
 
 
