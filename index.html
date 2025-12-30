@@ -4,7 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 1</title>
+    <meta name="description"
+        content="Professional Web Developer portfolio. I build modern, responsive and high-quality websites and UI experiences.">
+
+    <meta name="keywords"
+        content="Web Developer, Portfolio, Frontend Developer, HTML CSS JavaScript, India Developer, Freelancer">
+    <meta name="author" content="Jeet Soni">
+    <title>eet Soni – Web Developer Portfolio</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -39,8 +47,8 @@
             </p>
 
             <div class="hero-buttons">
-                <button class="primary">Hire Me</button>
-                <button class="secondary">My Work</button>
+                <button class="primary" onclick="location.href='#contact'">Hire Me</button>
+                <button class="secondary" onclick="location.href='#projects'">My Work</button>
             </div>
         </div>
     </section>
@@ -57,12 +65,12 @@
 
                 <div class="card">
                     <h3>📲App Development</h3>
-                    <p>Build Your Own Software quickly.</p>
+                    <p>Build software solutions with clean UI</p>
                 </div>
 
                 <div class="card">
                     <h3>💌SEO Optimization</h3>
-                    <p>Stand out with modern strategies and trends</p>
+                    <p>Stand out with modern design & strategy.</p>
                 </div>
             </div>
         </section>
@@ -82,7 +90,7 @@
 
                 <div class="project">
                     <h3>Calculator App</h3>
-                    <p>This is simple calculator app i made using HTML, CSS, Javascript</p>
+                    <p>This is simple calculator app i made using HTML, CSS, JavaScript</p>
                 </div>
             </div>
         </section>
@@ -112,11 +120,11 @@
             </div>
         </section>
         <!--Real CTA-->
-        <section id="cta" onclick="location.href='#contact'">
+        <section id="cta">
             <h2>Ready to build something Amazing?</h2>
             <p>Whether you need a website, UI design or help with your digital presence — I’m ready to help.</p>
 
-            <button class="cta-btn">Contact Me</button>
+            <button class="cta-btn" onclick="location.href='#contact'">Contact Me</button>
 
         </section>
         <!--Contact Me👇-->
@@ -124,7 +132,7 @@
             <h2>Contact</h2>
             <div class="acl">
                 <!--Form👇-->
-                <form class="call">
+                <form class="call" action="https://formspree.io/f/xnjqryeo" method="POST">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="user_name" required>
 
